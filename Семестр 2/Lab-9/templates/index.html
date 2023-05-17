@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+</head>
+<body>
+    <h1>My Projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li><a href="{{ project.link }}">{{ project.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="/add">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+
+        <label for="link">Link:</label>
+        <input type="text" id="link" name="link"><br>
+
+        <input type="submit" value="Add Project">
+    </form>
+</body>
+</html>
